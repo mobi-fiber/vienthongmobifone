@@ -1,0 +1,696 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-mobifone {
+    font-size: 30px;
+    font-weight: 800;
+    color: #0066b3;
+    letter-spacing: -1px;
+}
+
+.header-button {
+    background: #0066b3;
+    color: white;
+    padding: 11px 22px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+.header-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(0, 102, 179, 0.15), transparent 35%),
+        linear-gradient(135deg, #f7fbff 0%, #eaf5ff 50%, #ffffff 100%);
+    overflow: hidden;
+}
+
+.hero-content {
+    padding: 80px 0;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    background: #e3f2ff;
+    color: #0066b3;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.05;
+    font-weight: 900;
+    color: #073b69;
+    max-width: 800px;
+}
+
+.hero h1 span {
+    color: #0066b3;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    color: #555;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.promotion {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 22px 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid #0066b3;
+}
+
+.promotion-small {
+    color: #0066b3;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.promotion-title {
+    color: #e21b2d;
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 4px;
+}
+
+.promotion-text {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.price-highlight {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.price-highlight strong {
+    display: block;
+    color: #0066b3;
+    font-size: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 30px;
+    font-weight: 800;
+    transition: 0.25s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: #0066b3;
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid #0066b3;
+    color: #0066b3;
+}
+
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+.section-title span {
+    color: #0066b3;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.section-title h2 {
+    margin-top: 8px;
+    font-size: 36px;
+    color: #073b69;
+    line-height: 1.2;
+}
+
+.section-title p {
+    margin-top: 12px;
+    color: #666;
+}
+
+/* ================= BENEFITS ================= */
+
+.benefits {
+    padding: 90px 0;
+    background: white;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.benefit-card {
+    padding: 30px 24px;
+    border: 1px solid #e6edf3;
+    border-radius: 18px;
+    background: white;
+    transition: 0.25s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+    color: #073b69;
+    margin-bottom: 10px;
+}
+
+.benefit-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* ================= PACKAGES ================= */
+
+.packages {
+    padding: 90px 0;
+    background: #f5f9fc;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.package-card {
+    position: relative;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #e1e9f0;
+    text-align: center;
+    transition: 0.25s;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
+}
+
+.package-card.popular {
+    border: 2px solid #0066b3;
+}
+
+.popular-label {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0066b3;
+    color: white;
+    padding: 5px 18px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.package-tag {
+    display: inline-block;
+    background: #e9f5ff;
+    color: #0066b3;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.package-tag.yearly {
+    background: #edf8f1;
+    color: #168346;
+}
+
+.package-card h3 {
+    margin-top: 18px;
+    font-size: 22px;
+    color: #073b69;
+}
+
+.speed {
+    margin-top: 12px;
+    color: #666;
+}
+
+.speed strong {
+    color: #0066b3;
+    font-size: 48px;
+    line-height: 1;
+}
+
+.duration {
+    margin-top: 15px;
+    color: #555;
+    font-size: 14px;
+}
+
+.duration b {
+    color: #e21b2d;
+}
+
+.package-price {
+    margin-top: 20px;
+    font-size: 27px;
+    font-weight: 900;
+    color: #073b69;
+}
+
+.package-price span {
+    font-size: 16px;
+}
+
+.average {
+    margin-top: 5px;
+    color: #0066b3;
+    font-weight: 700;
+}
+
+.package-button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 22px;
+    padding: 13px;
+    border-radius: 28px;
+    background: #0066b3;
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    transition: 0.25s;
+}
+
+.package-button:hover {
+    background: #004e8a;
+    transform: translateY(-2px);
+}
+
+/* ================= PROMOTION ================= */
+
+.promotion-section {
+    padding: 70px 0;
+    background: #0066b3;
+    color: white;
+}
+
+.promotion-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.promotion-content span {
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.promotion-content h2 {
+    margin-top: 8px;
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.promotion-content p {
+    margin-top: 12px;
+    opacity: 0.9;
+}
+
+.btn-white {
+    background: white;
+    color: #0066b3;
+    white-space: nowrap;
+}
+
+/* ================= REGISTER ================= */
+
+.register {
+    padding: 90px 0;
+    background: white;
+}
+
+.register-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 50px;
+    border-radius: 25px;
+    background: #f4f9fd;
+}
+
+.register-text span {
+    color: #0066b3;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.register-text h2 {
+    margin-top: 10px;
+    color: #073b69;
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.register-text p {
+    margin-top: 15px;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    border: 1px solid #d5e0e9;
+    background: white;
+    padding: 13px 15px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0066b3;
+}
+
+.submit-button {
+    width: 100%;
+    border: none;
+    padding: 14px;
+    border-radius: 25px;
+    background: #0066b3;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #004e8a;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    padding: 55px 0 25px;
+    background: #073b69;
+    color: white;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.footer h3 {
+    margin-top: 10px;
+}
+
+.footer p {
+    margin-top: 8px;
+    opacity: 0.85;
+}
+
+.footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-contact div {
+    min-width: 150px;
+}
+
+.footer-contact span {
+    opacity: 0.75;
+    font-size: 14px;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 35px;
+    padding-top: 20px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* ================= MODAL ================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: min(450px, 100%);
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #eaf7ef;
+    color: #168346;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.modal-content h2 {
+    color: #073b69;
+}
+
+.modal-content strong {
+    display: block;
+    margin: 15px 0;
+    color: #0066b3;
+    font-size: 22px;
+}
+
+.modal-note {
+    color: #666;
+    font-size: 14px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .package-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .register-box {
+        grid-template-columns: 1fr;
+    }
+
+    .promotion-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header-content {
+        min-height: 62px;
+    }
+
+    .logo-mobifone {
+        font-size: 24px;
+    }
+
+    .header-button {
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding: 55px 0;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 19px;
+    }
+
+    .promotion {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .promotion-title {
+        font-size: 25px;
+    }
+
+    .price-highlight strong {
+        font-size: 24px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .benefit-grid,
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits,
+    .packages,
+    .register {
+        padding: 60px 0;
+    }
+
+    .promotion-content h2 {
+        font-size: 28px;
+    }
+
+    .register-box {
+        padding: 28px 20px;
+    }
+
+    .register-text h2 {
+        font-size: 30px;
+    }
+}
