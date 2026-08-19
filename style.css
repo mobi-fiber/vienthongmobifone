@@ -1394,3 +1394,20 @@ footer a {
     height: auto;
     object-fit: contain;
 }
+.hero h1 {
+    font-family: "Be Vietnam Pro", Arial, sans-serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.8px;
+}
+
+.hero h1 span {
+    display: block;
+    margin-top: 5px;
+    font-family: "Be Vietnam Pro", Arial, sans-serif;
+    font-size: 0.9em;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
