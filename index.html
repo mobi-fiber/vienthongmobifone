@@ -575,44 +575,67 @@
 
         <form id="registerForm">
 
-            <label>
+            <label for="package">
                 Gói cước
             </label>
 
-            <select id="selectedPackage">
+            <select id="package" name="package" required>
 
-                <option>
+                <option value="">
                     Chọn gói cước
                 </option>
 
-                <option>6Wifi 1Plus</option>
-                <option>6Wifi 2Plus</option>
-                <option>6Wifi 3Plus</option>
+                <option value="6Wifi 1Plus">
+                    6Wifi 1Plus
+                </option>
 
-                <option>12Wifi 1Plus</option>
-                <option>12Wifi 2Plus</option>
-                <option>12Wifi 3Plus</option>
+                <option value="6Wifi 2Plus">
+                    6Wifi 2Plus
+                </option>
+
+                <option value="6Wifi 3Plus">
+                    6Wifi 3Plus
+                </option>
+
+                <option value="12Wifi 1Plus">
+                    12Wifi 1Plus
+                </option>
+
+                <option value="12Wifi 2Plus">
+                    12Wifi 2Plus
+                </option>
+
+                <option value="12Wifi 3Plus">
+                    12Wifi 3Plus
+                </option>
 
             </select>
 
 
-            <label>
+            <label for="name">
                 Họ và tên
             </label>
 
             <input
                 type="text"
+                id="name"
+                name="name"
                 placeholder="Nhập họ và tên"
+                autocomplete="name"
                 required>
 
 
-            <label>
+            <label for="phone">
                 Số điện thoại
             </label>
 
             <input
                 type="tel"
+                id="phone"
+                name="phone"
                 placeholder="Nhập số điện thoại"
+                autocomplete="tel"
+                inputmode="numeric"
                 required>
 
 
