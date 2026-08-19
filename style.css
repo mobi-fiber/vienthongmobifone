@@ -1388,3 +1388,9 @@ footer a {
     font-weight: 800;
     line-height: 1.08;
 }
+.logo-image {
+    display: block;
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
