@@ -158,10 +158,13 @@ b {
     align-items: center;
 }
 
-.logo img {
-    width: 125px;
+.logo img,
+.logo-image {
+    width: 190px;
     height: auto;
     display: block;
+    object-fit: contain;
+}
 }
 
 .logo-text {
@@ -1387,12 +1390,6 @@ footer a {
     margin-top: 6px;
     font-weight: 800;
     line-height: 1.08;
-}
-.logo-image {
-    display: block;
-    width: 190px;
-    height: auto;
-    object-fit: contain;
 }
 .hero h1 {
     font-family: "Be Vietnam Pro", Arial, sans-serif;
