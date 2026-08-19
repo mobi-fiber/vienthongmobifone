@@ -1,159 +1,118 @@
-// ===============================
-// ĐĂNG KÝ GÓI CƯỚC
-// ===============================
-
-const modal = document.getElementById("registerModal");
-const modalPackage = document.getElementById("modalPackage");
-const selectedPackage = document.getElementById("selectedPackage");
-const registerForm = document.getElementById("registerForm");
+const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbyPvEecFIaWmlNO20yt2mZga_heIOAgBHcq2ryYePrL6pMaN2dmiyzSdbiS-QL_ZY4Xkg/exec";
 
 
-// Mở cửa sổ đăng ký
-function openRegister(packageName) {
+document.addEventListener("DOMContentLoaded", function () {
 
-    if (modalPackage) {
-        modalPackage.textContent = packageName;
+    const form = document.getElementById("registerForm");
+
+    if (!form) {
+        console.log("Không tìm thấy form registerForm");
+        return;
     }
 
-    if (selectedPackage) {
-        selectedPackage.value = packageName;
-    }
 
-    if (modal) {
-        modal.classList.add("show");
-    }
-}
-
-
-// Đóng cửa sổ đăng ký
-function closeRegister() {
-
-    if (modal) {
-        modal.classList.remove("show");
-    }
-}
-
-
-// Bấm ra ngoài Modal để đóng
-if (modal) {
-
-    modal.addEventListener("click", function(event) {
-
-        if (event.target === modal) {
-            closeRegister();
-        }
-
-    });
-
-}
-
-
-// Nhấn ESC để đóng Modal
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-        closeRegister();
-    }
-
-});
-
-
-// ===============================
-// FORM ĐĂNG KÝ
-// ===============================
-
-if (registerForm) {
-
-    registerForm.addEventListener("submit", function(event) {
+    form.addEventListener("submit", async function (event) {
 
         event.preventDefault();
 
-        const packageName =
-            selectedPackage
-                ? selectedPackage.value
-                : "Chưa chọn gói";
 
-        openRegister(packageName);
+        const packageInput =
+            document.getElementById("package");
 
-    });
+        const nameInput =
+            document.getElementById("name");
 
-}
+        const phoneInput =
+            document.getElementById("phone");
 
-
-// ===============================
-// TỰ ĐỘNG CHỌN GÓI KHI BẤM NÚT
-// ===============================
-
-document.querySelectorAll(".package-button").forEach(function(button) {
-
-    button.addEventListener("click", function() {
 
         const packageName =
-            button.closest(".package")
-                  ?.querySelector("h3")
-                  ?.textContent
-                  .trim();
+            packageInput ? packageInput.value.trim() : "";
 
-        if (packageName && selectedPackage) {
-            selectedPackage.value = packageName;
+        const customerName =
+            nameInput ? nameInput.value.trim() : "";
+
+        const phone =
+            phoneInput ? phoneInput.value.trim() : "";
+
+
+        if (!packageName) {
+            alert("Vui lòng chọn gói cước.");
+            return;
+        }
+
+
+        if (!customerName) {
+            alert("Vui lòng nhập họ và tên.");
+            return;
+        }
+
+
+        if (!phone) {
+            alert("Vui lòng nhập số điện thoại.");
+            return;
+        }
+
+
+        const button =
+            form.querySelector("button[type='submit']");
+
+
+        if (button) {
+            button.disabled = true;
+            button.textContent = "ĐANG GỬI...";
+        }
+
+
+        const data = {
+            package: packageName,
+            name: customerName,
+            phone: phone
+        };
+
+
+        try {
+
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                },
+                body: JSON.stringify(data)
+            });
+
+
+            alert(
+                "Đăng ký thành công!\n\n" +
+                "Thông tin của bạn đã được ghi nhận. " +
+                "Chúng tôi sẽ liên hệ tư vấn trong thời gian sớm nhất."
+            );
+
+
+            form.reset();
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert(
+                "Không thể gửi thông tin lúc này. " +
+                "Vui lòng thử lại sau."
+            );
+
+        } finally {
+
+            if (button) {
+                button.disabled = false;
+                button.textContent =
+                    "GỬI YÊU CẦU ĐĂNG KÝ";
+            }
+
         }
 
     });
-
-});
-
-
-// ===============================
-// HEADER KHI CUỘN TRANG
-// ===============================
-
-window.addEventListener("scroll", function() {
-
-    const header = document.querySelector(".header");
-
-    if (!header) return;
-
-    if (window.scrollY > 30) {
-
-        header.classList.add("scrolled");
-
-    } else {
-
-        header.classList.remove("scrolled");
-
-    }
-
-});
-
-
-// ===============================
-// ANIMATION NHẸ KHI HIỆN NỘI DUNG
-// ===============================
-
-const observer = new IntersectionObserver(
-    function(entries) {
-
-        entries.forEach(function(entry) {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
-    }
-);
-
-
-document.querySelectorAll(
-    ".benefit, .package, .promotion-inner, .register-box"
-).forEach(function(element) {
-
-    observer.observe(element);
 
 });
