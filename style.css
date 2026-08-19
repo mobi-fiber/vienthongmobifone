@@ -1,3 +1,14 @@
+/* =========================================================
+   MOBIFONE INTERNET
+   TYPOGRAPHY SYSTEM + WEBSITE STYLE
+   Font: Inter
+   ========================================================= */
+
+
+/* =========================
+   1. RESET
+   ========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,29 +20,121 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     color: #172033;
     background: #ffffff;
     line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 button,
 input,
-select {
-    font: inherit;
+select,
+textarea {
+    font-family: "Inter", Arial, sans-serif;
 }
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================
+   2. TYPOGRAPHY SYSTEM
+   ========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    color: #092f52;
+    font-family: "Inter", Arial, sans-serif;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.04;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(30px, 3.2vw, 42px);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 21px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 400;
+    color: #667085;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+
+/* =========================
+   3. COMMON
+   ========================= */
 
 .container {
     width: min(1180px, 92%);
     margin: 0 auto;
 }
 
-/* ================= HEADER ================= */
+.section-label,
+.hero-label {
+    display: inline-block;
+    color: #0066b3;
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-top: 9px;
+}
+
+.section-heading p {
+    margin-top: 11px;
+    font-size: 15px;
+}
+
+
+/* =========================
+   4. HEADER
+   ========================= */
 
 .header {
     position: sticky;
@@ -47,7 +150,7 @@ select {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 28px;
 }
 
 .logo {
@@ -55,25 +158,33 @@ select {
     align-items: center;
 }
 
+.logo img {
+    width: 125px;
+    height: auto;
+    display: block;
+}
+
 .logo-text {
-    font-size: 30px;
-    font-weight: 900;
     color: #0066b3;
-    letter-spacing: -1.5px;
+    font-size: 29px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.04em;
 }
 
 .navigation {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 30px;
     margin-left: auto;
 }
 
 .navigation a {
     color: #344054;
-    font-size: 14px;
-    font-weight: 700;
-    transition: 0.2s;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
 .navigation a:hover {
@@ -81,56 +192,63 @@ select {
 }
 
 .header-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 21px;
+    border-radius: 24px;
     background: #0066b3;
-    color: white;
-    padding: 11px 22px;
-    border-radius: 25px;
-    font-size: 13px;
-    font-weight: 800;
-    transition: 0.2s;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.2s ease;
 }
 
 .header-cta:hover {
     background: #004d86;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
-/* ================= HERO ================= */
+
+/* =========================
+   5. HERO
+   ========================= */
 
 .hero {
     position: relative;
     overflow: hidden;
     background:
-        radial-gradient(circle at 80% 20%, rgba(0, 125, 210, 0.18), transparent 28%),
-        radial-gradient(circle at 15% 80%, rgba(0, 102, 179, 0.08), transparent 30%),
-        linear-gradient(135deg, #f4faff 0%, #ffffff 55%, #eef8ff 100%);
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 125, 210, 0.16),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(0, 102, 179, 0.07),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f4faff 0%,
+            #ffffff 55%,
+            #eef8ff 100%
+        );
 }
 
 .hero-grid {
-    min-height: 650px;
+    min-height: 630px;
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
-    gap: 50px;
-    padding: 70px 0;
-}
-
-.hero-label,
-.section-label {
-    display: inline-block;
-    color: #0066b3;
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 1.5px;
+    gap: 55px;
+    padding: 65px 0;
 }
 
 .hero h1 {
     margin-top: 14px;
-    font-size: clamp(42px, 5vw, 70px);
-    line-height: 1.03;
     color: #092f52;
-    font-weight: 900;
-    letter-spacing: -2px;
 }
 
 .hero h1 span {
@@ -141,67 +259,76 @@ select {
 .hero-description {
     max-width: 570px;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.65;
     color: #667085;
 }
 
 .hero-offer {
     width: fit-content;
-    min-width: 420px;
-    margin-top: 30px;
-    padding: 23px 28px;
-    background: white;
-    border-radius: 18px;
+    min-width: 410px;
+    margin-top: 28px;
+    padding: 22px 26px;
+    background: #ffffff;
     border: 1px solid #dcebf7;
-    box-shadow: 0 20px 55px rgba(0, 74, 125, 0.12);
+    border-radius: 17px;
+    box-shadow: 0 18px 45px rgba(0, 74, 125, 0.11);
 }
 
 .offer-small {
     color: #0066b3;
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 1px;
+    font-size: 10px;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: 1.2px;
 }
 
 .offer-title {
-    margin-top: 4px;
+    margin-top: 5px;
     color: #e21c2a;
-    font-size: 29px;
-    font-weight: 900;
+    font-size: 27px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.025em;
 }
 
 .offer-text {
+    margin-top: 3px;
     color: #344054;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 600;
 }
 
 .offer-price {
-    margin-top: 9px;
+    margin-top: 8px;
     color: #667085;
+    font-size: 14px;
 }
 
 .offer-price strong {
     color: #0066b3;
-    font-size: 27px;
+    font-size: 25px;
+    font-weight: 800;
 }
 
 .hero-buttons {
     display: flex;
     gap: 12px;
-    margin-top: 28px;
+    margin-top: 27px;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
-    padding: 0 26px;
-    border-radius: 28px;
-    font-size: 14px;
-    font-weight: 900;
-    transition: 0.2s;
+    min-height: 46px;
+    padding: 0 25px;
+    border-radius: 25px;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    transition: 0.2s ease;
 }
 
 .btn:hover {
@@ -210,8 +337,8 @@ select {
 
 .btn-primary {
     background: #0066b3;
-    color: white;
-    box-shadow: 0 10px 25px rgba(0, 102, 179, 0.22);
+    color: #ffffff;
+    box-shadow: 0 9px 22px rgba(0, 102, 179, 0.2);
 }
 
 .btn-primary:hover {
@@ -219,16 +346,19 @@ select {
 }
 
 .btn-outline {
-    border: 1.5px solid #0066b3;
+    border: 1px solid #0066b3;
     color: #0066b3;
-    background: white;
+    background: #ffffff;
 }
 
 .btn-outline:hover {
     background: #eef8ff;
 }
 
-/* ================= HERO VISUAL ================= */
+
+/* =========================
+   6. HERO VISUAL
+   ========================= */
 
 .hero-right {
     display: flex;
@@ -238,18 +368,20 @@ select {
 
 .wifi-card {
     position: relative;
-    width: min(430px, 100%);
+    width: min(420px, 100%);
     aspect-ratio: 1 / 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-radius: 50px;
-    background:
-        radial-gradient(circle at center, rgba(255,255,255,0.95) 0 22%, transparent 23%),
-        linear-gradient(145deg, #0066b3, #003f73);
-    box-shadow: 0 35px 80px rgba(0, 65, 110, 0.25);
+    border-radius: 48px;
+    background: linear-gradient(
+        145deg,
+        #0066b3,
+        #003f73
+    );
+    box-shadow: 0 30px 70px rgba(0, 65, 110, 0.22);
 }
 
 .wifi-card::before,
@@ -273,70 +405,56 @@ select {
 .wifi-circle {
     position: relative;
     z-index: 2;
-    width: 110px;
-    height: 110px;
+    width: 105px;
+    height: 105px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: white;
+    background: #ffffff;
     color: #0066b3;
-    font-size: 22px;
-    font-weight: 900;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    font-size: 20px;
+    font-weight: 800;
+    box-shadow: 0 13px 30px rgba(0,0,0,0.14);
 }
 
 .wifi-speed {
     position: relative;
     z-index: 2;
-    margin-top: 25px;
-    color: white;
-    font-size: 72px;
+    margin-top: 23px;
+    color: #ffffff;
+    font-size: 68px;
     line-height: 1;
-    font-weight: 900;
+    font-weight: 800;
+    letter-spacing: -0.05em;
 }
 
 .wifi-speed small {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
 }
 
 .wifi-text {
     position: relative;
     z-index: 2;
-    margin-top: 15px;
+    margin-top: 14px;
     color: rgba(255,255,255,0.88);
     text-align: center;
-    font-size: 12px;
-    font-weight: 900;
+    font-size: 10px;
     line-height: 1.7;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
 }
 
-/* ================= SECTION ================= */
 
-.section-heading {
-    max-width: 720px;
-    margin: 0 auto 45px;
-    text-align: center;
-}
-
-.section-heading h2 {
-    margin-top: 8px;
-    color: #092f52;
-    font-size: 38px;
-    line-height: 1.2;
-}
-
-.section-heading p {
-    margin-top: 10px;
-    color: #667085;
-}
-
-/* ================= BENEFITS ================= */
+/* =========================
+   7. BENEFITS
+   ========================= */
 
 .benefits {
-    padding: 90px 0;
-    background: white;
+    padding: 88px 0;
+    background: #ffffff;
 }
 
 .benefit-grid {
@@ -346,73 +464,76 @@ select {
 }
 
 .benefit {
-    padding: 30px 24px;
+    padding: 28px 23px;
     border: 1px solid #e7edf3;
-    border-radius: 18px;
-    background: white;
-    transition: 0.25s;
+    border-radius: 17px;
+    background: #ffffff;
+    transition: 0.25s ease;
 }
 
 .benefit:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.07);
+    box-shadow: 0 18px 42px rgba(0,0,0,0.07);
 }
 
 .benefit-icon {
-    width: 55px;
-    height: 55px;
+    width: 53px;
+    height: 53px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 15px;
+    border-radius: 14px;
     background: #eef7ff;
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .benefit h3 {
-    margin-top: 18px;
-    color: #092f52;
-    font-size: 18px;
+    margin-top: 17px;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 .benefit p {
-    margin-top: 8px;
-    color: #667085;
-    font-size: 14px;
+    margin-top: 7px;
+    font-size: 13px;
+    line-height: 1.65;
 }
 
-/* ================= PACKAGES ================= */
+
+/* =========================
+   8. PACKAGES
+   ========================= */
 
 .packages {
-    padding: 90px 0;
+    padding: 88px 0;
     background: #f5f9fc;
 }
 
 .package-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 20px;
 }
 
 .package {
     position: relative;
-    padding: 30px;
+    padding: 28px;
     overflow: hidden;
     border: 1px solid #e0e8ef;
-    border-radius: 22px;
-    background: white;
+    border-radius: 21px;
+    background: #ffffff;
     text-align: center;
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
 .package:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 50px rgba(0,0,0,0.09);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.08);
 }
 
 .package.featured {
     border: 2px solid #0066b3;
-    box-shadow: 0 18px 45px rgba(0,102,179,0.13);
+    box-shadow: 0 17px 42px rgba(0,102,179,0.12);
 }
 
 .popular {
@@ -422,24 +543,26 @@ select {
     right: 0;
     padding: 7px;
     background: #0066b3;
-    color: white;
-    font-size: 11px;
-    font-weight: 900;
+    color: #ffffff;
+    font-size: 9px;
+    line-height: 1.2;
+    font-weight: 800;
     letter-spacing: 1px;
 }
 
 .package.featured .package-top {
-    margin-top: 15px;
+    margin-top: 14px;
 }
 
 .package-top {
     display: inline-block;
-    padding: 7px 13px;
+    padding: 6px 12px;
     border-radius: 20px;
     background: #eaf5ff;
     color: #0066b3;
-    font-size: 11px;
-    font-weight: 900;
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 800;
 }
 
 .package-top.yearly {
@@ -448,58 +571,66 @@ select {
 }
 
 .package h3 {
-    margin-top: 17px;
-    color: #092f52;
-    font-size: 22px;
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .speed {
-    margin-top: 16px;
-    color: #667085;
-}
-
-.speed strong {
-    color: #0066b3;
-    font-size: 52px;
-    line-height: 1;
-}
-
-.package-info {
-    margin-top: 12px;
+    margin-top: 15px;
     color: #667085;
     font-size: 14px;
 }
 
+.speed strong {
+    color: #0066b3;
+    font-size: 49px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+
+.package-info {
+    margin-top: 11px;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
 .package-info b {
     color: #e21c2a;
+    font-weight: 700;
 }
 
 .price {
-    margin-top: 20px;
+    margin-top: 18px;
     color: #092f52;
-    font-size: 27px;
-    font-weight: 900;
+    font-size: 25px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.025em;
 }
 
 .monthly {
     margin-top: 4px;
     color: #0066b3;
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 700;
 }
 
 .package-button {
     width: 100%;
-    margin-top: 22px;
-    padding: 13px 20px;
+    margin-top: 20px;
+    padding: 12px 20px;
     border: 0;
-    border-radius: 25px;
+    border-radius: 24px;
     background: #0066b3;
-    color: white;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 900;
-    transition: 0.2s;
+    color: #ffffff;
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 700;
+    transition: 0.2s ease;
 }
 
 .package-button:hover {
@@ -507,14 +638,15 @@ select {
     transform: translateY(-2px);
 }
 
-/* ================= PROMOTION ================= */
+
+/* =========================
+   9. PROMOTION
+   ========================= */
 
 .promotion {
-    padding: 65px 0;
-    background:
-        radial-gradient(circle at 85% 50%, rgba(255,255,255,0.14), transparent 25%),
-        #0066b3;
-    color: white;
+    padding: 60px 0;
+    background: #0066b3;
+    color: #ffffff;
 }
 
 .promotion-inner {
@@ -525,80 +657,94 @@ select {
 }
 
 .promotion-label {
-    font-size: 12px;
-    font-weight: 900;
+    font-size: 10px;
+    line-height: 1.3;
+    font-weight: 800;
     letter-spacing: 1.3px;
 }
 
 .promotion h2 {
-    margin-top: 8px;
-    font-size: 36px;
+    margin-top: 7px;
+    color: #ffffff;
+    font-size: 34px;
     line-height: 1.15;
+    font-weight: 800;
 }
 
 .promotion p {
-    margin-top: 12px;
-    color: rgba(255,255,255,0.85);
+    margin-top: 11px;
+    color: rgba(255,255,255,0.82);
+    font-size: 14px;
 }
 
 .btn-white {
     flex-shrink: 0;
-    background: white;
+    background: #ffffff;
     color: #0066b3;
 }
 
-/* ================= REGISTER ================= */
+
+/* =========================
+   10. REGISTER
+   ========================= */
 
 .register {
-    padding: 90px 0;
-    background: white;
+    padding: 88px 0;
+    background: #ffffff;
 }
 
 .register-box {
     display: grid;
     grid-template-columns: 1fr 0.8fr;
     gap: 70px;
-    padding: 55px;
-    border-radius: 28px;
+    padding: 52px;
+    border-radius: 27px;
     background: #f5f9fc;
 }
 
 .register-info h2 {
-    margin-top: 10px;
-    color: #092f52;
-    font-size: 42px;
+    margin-top: 9px;
+    font-size: 40px;
     line-height: 1.1;
+    font-weight: 800;
 }
 
 .register-info p {
     max-width: 480px;
-    margin-top: 18px;
-    color: #667085;
+    margin-top: 17px;
+    font-size: 14px;
 }
 
 #registerForm {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
 }
 
 #registerForm label {
     margin-top: 7px;
     color: #344054;
-    font-size: 13px;
-    font-weight: 800;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 700;
 }
 
 #registerForm input,
 #registerForm select {
     width: 100%;
-    min-height: 47px;
+    min-height: 46px;
     padding: 0 14px;
     border: 1px solid #d5dee8;
-    border-radius: 10px;
+    border-radius: 9px;
     outline: none;
-    background: white;
+    background: #ffffff;
     color: #344054;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+#registerForm input::placeholder {
+    color: #98a2b3;
 }
 
 #registerForm input:focus,
@@ -608,80 +754,101 @@ select {
 }
 
 #registerForm button {
-    margin-top: 12px;
-    min-height: 48px;
+    margin-top: 11px;
+    min-height: 47px;
     border: 0;
     border-radius: 25px;
     background: #0066b3;
-    color: white;
-    cursor: pointer;
-    font-weight: 900;
-    transition: 0.2s;
+    color: #ffffff;
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 700;
+    transition: 0.2s ease;
 }
 
 #registerForm button:hover {
     background: #004d86;
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================
+   11. FOOTER
+   ========================= */
 
 footer {
-    padding: 55px 0 25px;
+    padding: 52px 0 23px;
     background: #062f51;
-    color: white;
+    color: #ffffff;
 }
 
 .footer-inner {
     text-align: center;
 }
 
+.footer-logo img {
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
 .footer-logo {
-    color: white;
-    font-size: 32px;
-    font-weight: 900;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 800;
 }
 
 .footer-inner h3 {
-    margin-top: 7px;
-    font-size: 16px;
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 700;
 }
 
 .footer-inner > p {
     margin-top: 7px;
-    color: rgba(255,255,255,0.72);
+    color: rgba(255,255,255,0.68);
+    font-size: 13px;
 }
 
 .footer-contact {
     display: flex;
     justify-content: center;
-    gap: 80px;
-    margin-top: 35px;
+    gap: 75px;
+    margin-top: 32px;
 }
 
 .footer-contact div {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
 }
 
 .footer-contact strong {
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 700;
 }
 
 .footer-contact span {
-    color: rgba(255,255,255,0.6);
-    font-size: 12px;
+    color: rgba(255,255,255,0.58);
+    font-size: 11px;
 }
 
 .copyright {
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 37px;
+    padding-top: 18px;
     border-top: 1px solid rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.55);
-    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    font-size: 10px;
 }
 
-/* ================= MODAL ================= */
+
+/* =========================
+   12. MODAL
+   ========================= */
 
 .modal {
     position: fixed;
@@ -701,69 +868,72 @@ footer {
 .modal-box {
     position: relative;
     width: min(430px, 100%);
-    padding: 40px 30px;
-    border-radius: 22px;
-    background: white;
+    padding: 38px 30px;
+    border-radius: 21px;
+    background: #ffffff;
     text-align: center;
     box-shadow: 0 30px 80px rgba(0,0,0,0.2);
 }
 
 .modal-close {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 9px;
+    right: 14px;
     border: 0;
     background: transparent;
     color: #667085;
-    cursor: pointer;
-    font-size: 28px;
+    font-size: 27px;
 }
 
 .modal-check {
-    width: 60px;
-    height: 60px;
+    width: 58px;
+    height: 58px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 15px;
+    margin: 0 auto 14px;
     border-radius: 50%;
     background: #eaf7ef;
     color: #16834a;
-    font-size: 30px;
-    font-weight: 900;
+    font-size: 28px;
+    font-weight: 800;
 }
 
 .modal-box h2 {
     color: #092f52;
-    font-size: 23px;
+    font-size: 22px;
+    font-weight: 800;
 }
 
 .modal-box p {
-    margin-top: 10px;
-    color: #667085;
-    font-size: 14px;
+    margin-top: 9px;
+    font-size: 13px;
 }
 
 .modal-box strong {
     display: block;
-    margin-top: 8px;
+    margin-top: 7px;
     color: #0066b3;
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: 800;
 }
 
 .modal-ok {
     width: 100%;
-    margin-top: 22px;
-    padding: 13px;
+    margin-top: 21px;
+    padding: 12px;
     border: 0;
-    border-radius: 25px;
+    border-radius: 24px;
     background: #0066b3;
-    color: white;
-    cursor: pointer;
-    font-weight: 900;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* =========================
+   13. RESPONSIVE
+   ========================= */
 
 @media (max-width: 950px) {
 
@@ -773,7 +943,7 @@ footer {
 
     .hero-grid {
         grid-template-columns: 1fr;
-        padding: 60px 0;
+        padding: 55px 0;
     }
 
     .hero-right {
@@ -781,7 +951,7 @@ footer {
     }
 
     .wifi-card {
-        width: min(360px, 90%);
+        width: min(350px, 90%);
     }
 
     .benefit-grid {
@@ -798,10 +968,15 @@ footer {
     }
 }
 
+
 @media (max-width: 600px) {
 
     .header-inner {
         height: 64px;
+    }
+
+    .logo img {
+        width: 105px;
     }
 
     .logo-text {
@@ -809,17 +984,18 @@ footer {
     }
 
     .header-cta {
-        padding: 9px 14px;
-        font-size: 11px;
+        min-height: 38px;
+        padding: 0 14px;
+        font-size: 10px;
     }
 
     .hero-grid {
         min-height: auto;
-        padding: 45px 0 55px;
+        padding: 42px 0 52px;
     }
 
     .hero-right {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .wifi-card {
@@ -838,22 +1014,22 @@ footer {
     }
 
     .hero h1 {
-        font-size: 43px;
-        letter-spacing: -1.5px;
+        font-size: 42px;
+        letter-spacing: -0.04em;
     }
 
     .hero-description {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .hero-offer {
         width: 100%;
         min-width: 0;
-        padding: 19px;
+        padding: 18px;
     }
 
     .offer-title {
-        font-size: 25px;
+        font-size: 24px;
     }
 
     .hero-buttons {
@@ -871,7 +1047,7 @@ footer {
     .benefits,
     .packages,
     .register {
-        padding: 65px 0;
+        padding: 62px 0;
     }
 
     .benefit-grid,
@@ -885,19 +1061,19 @@ footer {
     }
 
     .promotion h2 {
-        font-size: 29px;
+        font-size: 28px;
     }
 
     .register-box {
-        padding: 30px 20px;
+        padding: 29px 20px;
     }
 
     .register-info h2 {
-        font-size: 32px;
+        font-size: 31px;
     }
 
     .footer-contact {
         flex-direction: column;
-        gap: 20px;
+        gap: 19px;
     }
 }
