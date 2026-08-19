@@ -116,3 +116,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+// ==========================================
+// CHỌN GÓI CƯỚC TỪ NÚT "ĐĂNG KÝ NGAY"
+// ==========================================
+
+function openRegister(packageName) {
+
+    // Tìm ô chọn gói cước trong form
+    const packageSelect =
+        document.getElementById("package");
+
+    // Tìm khu vực form đăng ký
+    const registerSection =
+        document.getElementById("register");
+
+    // Tự động chọn đúng gói
+    if (packageSelect) {
+        packageSelect.value = packageName;
+    }
+
+    // Cuộn xuống form đăng ký
+    if (registerSection) {
+
+        registerSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
+    // Sau khi cuộn xong, đưa con trỏ vào ô họ tên
+    setTimeout(function () {
+
+        const nameInput =
+            document.getElementById("name");
+
+        if (nameInput) {
+            nameInput.focus();
+        }
+
+    }, 700);
+
+}
