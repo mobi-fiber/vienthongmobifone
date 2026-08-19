@@ -1077,3 +1077,299 @@ footer {
         gap: 19px;
     }
 }
+/* =========================================================
+   TYPOGRAPHY - ĐỒNG BỘ TOÀN BỘ WEBSITE
+   ========================================================= */
+
+/* Font chính */
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0;
+}
+
+/* Toàn bộ phần tử */
+* {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   HEADER / MENU
+   ========================================================= */
+
+nav,
+.nav,
+.nav-links,
+header a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    line-height: 1.5;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin: 12px 0 20px;
+}
+
+.hero h1 br {
+    display: block;
+}
+
+.hero p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.6px;
+    margin: 10px 0 14px;
+}
+
+.section-heading p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+.section-label {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PACKAGE CARD
+   ========================================================= */
+
+.package {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.package-top {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+.package h3 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    margin: 12px 0;
+}
+
+.package .speed {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.package .speed strong {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.package-info {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.package-info b {
+    font-weight: 700;
+}
+
+.package .price {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+}
+
+.package .monthly {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+button,
+.package-button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0;
+}
+
+
+/* =========================================================
+   FORM ĐĂNG KÝ
+   ========================================================= */
+
+.register {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.register-info h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.6px;
+}
+
+.register-info p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.register label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.register input,
+.register select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   PROMOTION
+   ========================================================= */
+
+.promotion h2 {
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.6px;
+}
+
+.promotion p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer h3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+footer p,
+footer li,
+footer a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        line-height: 1.08;
+        letter-spacing: -0.8px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+        line-height: 1.15;
+    }
+
+    .package h3 {
+        font-size: 22px;
+    }
+
+    .package .speed strong {
+        font-size: 38px;
+    }
+
+    .package .price {
+        font-size: 26px;
+    }
+
+}
